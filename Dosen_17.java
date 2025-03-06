@@ -28,4 +28,8 @@ class Dosen_17 {
     public void ubahPendidikan(String jenjangBaru) {
         this.jenjangPendidikan = jenjangBaru;
     }
+
+    public void tambahGelar(String gelarBaru) {
+        this.nama = gelarBaru + " " + this.nama;
+    }
 }

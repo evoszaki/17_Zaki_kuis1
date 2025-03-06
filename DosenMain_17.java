@@ -1,39 +1,28 @@
-import java.util.Scanner;
-
 class DosenMain_17 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        
-        System.out.print("Masukkan NIDN: ");
-        String nidn = scanner.nextLine();
-        
-        System.out.print("Masukkan Nama: ");
-        String nama = scanner.nextLine();
-        
-        System.out.print("Masukkan Tahun Masuk: ");
-        int tahunMasuk = scanner.nextInt();
-        scanner.nextLine();
-        
-        System.out.print("Masukkan Jenjang Pendidikan: ");
-        String jenjangPendidikan = scanner.nextLine();
-        
-        System.out.print("Masukkan Program Studi: ");
-        String prodi = scanner.nextLine();
-        
-        Dosen_17 dosen1 = new Dosen_17(nidn, nama, tahunMasuk, jenjangPendidikan, prodi);
+        Dosen_17 dosen1 = new Dosen_17("123456", "Budi Santoso", 2010, "S3", "Teknik Informatika");
+        Dosen_17 dosen2 = new Dosen_17("789012", "Ani Rahmawati", 2008, "S2", "Sistem Informasi");
+
+        System.out.println("===================================");
+        System.out.println(" INFORMASI DOSEN SEBELUM PERUBAHAN ");
+        System.out.println("===================================");
         dosen1.tampilkanInfo();
+        System.out.println("------------------------------");
+        dosen2.tampilkanInfo();
         
-        System.out.print("Masukkan Program Studi baru: ");
-        String prodiBaru = scanner.nextLine();
-        dosen1.ubahProdi(prodiBaru);
-        
-        System.out.print("Masukkan Jenjang Pendidikan baru: ");
-        String jenjangBaru = scanner.nextLine();
-        dosen1.ubahPendidikan(jenjangBaru);
-        
-        System.out.println("Setelah perubahan:");
+        dosen1.ubahProdi("Sistem Informasi");
+        dosen1.ubahPendidikan("Profesor");
+        dosen1.tambahGelar("Prof. Dr.");
+
+        dosen2.ubahProdi("Teknik Komputer");
+        dosen2.ubahPendidikan("S3");
+        dosen2.tambahGelar("Dr.");
+
+        System.out.println("\n===================================");
+        System.out.println(" INFORMASI DOSEN SETELAH PERUBAHAN ");
+        System.out.println("===================================");
         dosen1.tampilkanInfo();
-        
-        scanner.close();
+        System.out.println("------------------------------");
+        dosen2.tampilkanInfo();
     }
 }
