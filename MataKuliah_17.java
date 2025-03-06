@@ -5,7 +5,7 @@ class MataKuliah_17 {
     Dosen_17[] dosenPengampu;
     int jumlahDosen = 0;
 
-    public MataKuliah_17(String kodeMK, String namaMK, int sks, int kapasitasDosen) {
+    public MataKuliah_17(String kodeMK, String namaMK, int sks) {
         this.kodeMK = kodeMK;
         this.namaMK = namaMK;
         if (sks >= 2) {
@@ -14,7 +14,7 @@ class MataKuliah_17 {
             System.out.println("SKS tidak valid! Minimal 2 SKS.");
             this.sks = 2;
         }
-        this.dosenPengampu = new Dosen_17[kapasitasDosen];
+        this.dosenPengampu = new Dosen_17[3]; 
     }
 
     public void tampilkanInfo() {
@@ -40,7 +40,7 @@ class MataKuliah_17 {
     }
 
     public void tambahDosen(Dosen_17 dosen) {
-        if (jumlahDosen < dosenPengampu.length) {
+        if (jumlahDosen < 3) {
             dosenPengampu[jumlahDosen] = dosen;
             jumlahDosen++;
         } else {
